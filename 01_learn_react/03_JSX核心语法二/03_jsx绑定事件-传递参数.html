@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <button class="btn">按钮</button>
+  <script>
+    document.getElementsByClassName("btn")[0].addEventListener("click", (e) => {
+      console.log(e);
+    })
+  </script>
+    
+  <div id="app"></div>
+
+  <script src="../react/react.development.js"></script>
+  <script src="../react/react-dom.development.js"></script>
+  <script src="../react/babel.min.js"></script>
+
+  <script type="text/babel">
+    /* 
+    
+    https://react.docschina.org/docs/handling-events.html
+    react 官网中有介绍事件中的this如何处理，也有点击时候传递参数如何传递，就是语法糖，也不需要问为什么。
+     */
+    class App extends React.Component {
+      constructor(props) {
+        super(props);
+
+        this.state = {
+          movies: ["大话西游", "海王", "流浪地球", "盗梦空间"]
+        }
+
+        this.btnClick = this.btnClick.bind(this);
+      }
+
+      render() {
+        return (
+          <div>
+            <button onClick={this.btnClick}>按钮</button>
+            <button onClick={this.btnClick222('wo')}>按钮22</button>
+            
+            <ul>
+              {
+                this.state.movies.map((item, index, arr) => {
+                  return (
+                    <li className="item" 
+                        onClick={ e => { this.liClick(item, index, e) }}
+                        key={item}
+                        title="li">
+                      {item}
+                    </li>
+                  )
+                })
+              }
+            </ul>
+            <hr/>
+            <ul>
+              {
+                this.state.movies.map((item, index, arr) => {
+                  return (
+                    <li className="item" 
+                        onClick={ this.liClickSecond.bind(this,item,index)}
+                        key={item}
+                        title="li">
+                      {item}
+                    </li>
+                  )
+                })
+              }
+            </ul>
+          </div>
+        )
+      }
+
+      btnClick(event) {
+        console.log("按钮发生了点击", event);
+      }
+      btnClick222 = (msg) => {
+        console.log('按钮2发生了点击')
+        return () => {
+          console.log(msg)
+        }
+      }
+      liClick(item, index, event) {
+        console.log("li---111发生了点击", item, index, event);
+      }
+
+      liClickSecond(item, index){
+        console.log("li---222发生了点击", item, index);
+      }
+    }
+
+    ReactDOM.render(<App/>, document.getElementById("app"));
+  </script>
+
+</body>
+</html>
