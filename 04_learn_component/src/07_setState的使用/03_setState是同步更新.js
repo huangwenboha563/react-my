@@ -20,6 +20,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
+    // 情况2
     document.getElementById("btn").addEventListener("click", (e) => {
       this.setState({
         message: "你好啊,李银河"
@@ -45,12 +46,18 @@ export default class App extends Component {
 }
 
 
+
+
 /* 
 关于setState的异步还是同步的问题
 1. setState都是异步的
 2. 在两种情况下是同步的
 （2.1，不通过onClick来点击，通过原生的document.getElementById,获取到，通过addEventListener来绑定点击事件，之后立刻获取stage）
 
+
+ 情况1：
+ 将setState放入一个setTimeout延迟函数中
+ 情况2：通过原生的dom事件比如点击一个按钮之后再去setState...
 
 
 

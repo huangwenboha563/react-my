@@ -45,3 +45,9 @@ export default class App extends Component {
     })
   }
 }
+/*  可能会问，为什么设计为异步的
+*  1.setState设计为异步的，是为了提高性能。把需要更新的东西放入到一个队列里面；
+*  2.如果是同步的，render在渲染的时候diff的时候可能会慢，会导致子组件依赖父组件的数据更新不及时
+*
+*
+*/
