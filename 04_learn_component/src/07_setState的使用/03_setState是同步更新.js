@@ -56,9 +56,13 @@ export default class App extends Component {
 
 
  情况1：
- 将setState放入一个setTimeout延迟函数中
- 情况2：通过原生的dom事件比如点击一个按钮之后再去setState...
+ * 将setState放入一个setTimeout延迟函数中
+ 情况2：
+ * 通过原生的dom事件比如点击一个按钮之后再去setState...
 
+ 看ppt总结
+ 1. 在生命周期中去setState和合成事件中，setState是异步的
+ 2. 在setTimeout或者原生dom事件中，setState是同步的。
 
-
+ 不能坚决的说它是异步的还是同步的
 */

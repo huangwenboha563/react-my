@@ -24,7 +24,7 @@ import ReactDOM from 'react-dom';
 // import App from './08_React性能优化/01_列表中keys的作用';
 // import App from './08_React性能优化/02_组件嵌套的render调用';
 // import App from './08_React性能优化/03_shouldComponentUpdate';
-// import App from './08_React性能优化/04_PureComponent';
+import App from './08_React性能优化/04_PureComponent';
 // import App from './08_React性能优化/05_memo的使用';
 
 // import App from './09_前面知识点补充/01_setState不可变的力量';
@@ -45,7 +45,7 @@ import ReactDOM from 'react-dom';
 // import App from './11_高阶组件的使用/07_高阶组件应用-生命周期劫持-增强';
 
 // import App from './12_组件内容补充/01_ref的转发';
-import App from './12_组件内容补充/02_portals的使用';
+// import App from './12_组件内容补充/02_portals的使用';
 // import "./css/index.css";
 // import App from './12_组件内容补充/03_fragments的使用';
 // import App from './12_组件内容补充/04_strictMode的使用';

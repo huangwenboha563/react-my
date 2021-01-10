@@ -21,11 +21,22 @@ export default class App extends Component {
   }
 
   changeText() {
-    // 了解真相你才能获得真正的自由
+    // 了解真相你才能获得真正的自由，这样设置完之后页面上的name还是会显示的，因为源码里面会合并。
     this.setState({
       message: "你好啊,李银河"
     });
-
+    /*
+    *
+    *
+    * 如果点击的时候想把message改变，不需要把name也带上。源码里面会合并的
+    this.setState({
+      message: "你好啊,李银河",
+      name: 'coderwhy'
+    });
+    *
+    *
+    */
+    // 源码里面就是这样做的
     // Object.assign({}, this.state, {message: "你好啊,李银河"})
   }
 }

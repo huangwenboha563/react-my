@@ -1,44 +1,46 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
+	constructor(props) {
+		super(props);
 
-    this.state = {
-      counter: 0,
-      message: "Hello World"
-    }
-  }
+		this.state = {
+			counter: 0,
+			message: "Hello World"
+		}
+	}
 
-  render() {
-    console.log("App render函数被调用");
-    return (
-      <div>
-        <h2>当前计数: {this.state.counter}</h2>
-        <h2>当前文本: {this.state.message}</h2>
-        <button onClick={e => this.increment()}>+1</button>
-        <button onClick={e => this.changeText()}>改变文本</button>
-      </div>
-    )
-  }
-  // 默认是返回true，这样的话，点击改变文本就不执行render了，只有点击+1才会执行render
-  // 子组件不依赖 message，message改的时候不希望子组件的render方法也执行
-  shouldComponentUpdate(nextProps, nextState) {
-    if (this.state.counter !== nextState.counter) {
-      return true;
-    }
+	render() {
+		console.log("App render函数被调用");
+		return (
+			<div>
+				<h2>当前计数: {this.state.counter}</h2>
+				<h2>当前文本: {this.state.message}</h2>
+				<button onClick={e => this.increment()}>+1</button>
+				<button onClick={e => this.changeText()}>改变文本</button>
+			</div>
+		)
+	}
 
-    return false;
-  }
-  increment() {
-    this.setState({
-      counter: this.state.counter + 1
-    })
-  }
+	// 默认是返回true，这样的话，点击改变文本就不执行render了，只有点击+1才会执行render
+	// 子组件不依赖 message，message改的时候不希望子组件的render方法也执行
+	shouldComponentUpdate(nextProps, nextState) {
+		if (this.state.counter !== nextState.counter) {
+			return true;
+		}
 
-  changeText() {
-    this.setState({
-      message: "你好啊,李银河"
-    })
-  }
+		return false;
+	}
+
+	increment() {
+		this.setState({
+			counter: this.state.counter + 1
+		})
+	}
+
+	changeText() {
+		this.setState({
+			message: "你好啊,李银河"
+		})
+	}
 }

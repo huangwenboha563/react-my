@@ -70,7 +70,10 @@ export default class App extends PureComponent {
 
 /* 
 总结一句话：
-兄弟组件之间的通信......
+兄弟组件之间的通信......。
+
+要么依赖共有的父亲
+要么以来发布订阅模式，和vue一样的概念。
 
 
 

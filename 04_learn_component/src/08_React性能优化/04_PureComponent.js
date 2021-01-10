@@ -1,4 +1,5 @@
-import React, { PureComponent ,Component} from 'react';
+// import React, { PureComponent ,Component} from 'react';
+import React, { PureComponent} from 'react';
 
 // Header
 function Header() {
@@ -81,4 +82,8 @@ export default class App extends PureComponent {
 *  03_shouldComponentUpdate,利用shouldComponentUpdate这个钩子函数来提高性能
 *  04_PureComponent,利用自带的PureComponent来提高性能，PureComponent只能用在类组件上
 *  05_memo，为什么要memo，如果是类组件我们可以用PureComponent来提高性能。如果是函数式组件呢，就需要用memo包裹一下了。没有什么为什么，就是语法糖而已
+*  总之为了减少没有必要的render，class组件都用PureComponent
+*  减少不必要的render！！！！！
+*  更高级别的优化immutable
+*
 */
