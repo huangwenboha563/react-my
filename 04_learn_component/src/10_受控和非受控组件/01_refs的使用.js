@@ -1,4 +1,5 @@
-import React, { PureComponent, createRef, Component } from 'react';
+import React, { PureComponent, createRef } from 'react';
+// Component
 
 class Counter extends PureComponent {
   constructor(props) {
@@ -29,7 +30,7 @@ export default class App extends PureComponent {
 
   constructor(props) {
     super(props);
-
+    // 目前推荐的是这种方式
     this.titleRefSecond = createRef();
     this.counterRef = createRef();
     this.titleEl = null;
@@ -73,7 +74,7 @@ export default class App extends PureComponent {
   changeText() {
     // 1.使用方式一: 字符串(不推荐, 后续的更新会删除)
     this.refs.titleRefFirst.innerHTML = "Hello Coderwhy";
-    // 2.使用方式二: 通过createRef
+    // 2.使用方式二: 通过createRef(react推荐这种方式)
     this.titleRefSecond.current.innerHTML = "Hello JavaScript";
     // 3.使用方式三: 回调函数方式
     this.titleEl.innerHTML = "Hello TypeScript";

@@ -13,8 +13,9 @@ export default class App extends PureComponent {
     return (
       <div>
         <form onSubmit={e => this.handleSubmit(e)}>
-          <select name="fruits" 
+          <select name="fruits"
                   onChange={e => this.handleChange(e)}
+                  // this.state = {fruits: "orange"} // value= {this.state.fruits} // 代表默认选中的是orange
                   value={this.state.fruits}>
             <option value="apple">苹果</option>
             <option value="banana">香蕉</option>

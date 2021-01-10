@@ -1,4 +1,7 @@
-
+/*
+*
+* 兄弟组件
+*/
 // PureComponent用来提高性能的，避免子组件没必要的render
 import React, { PureComponent } from 'react';
 // events是需要安装的通过npm yarn都可以
