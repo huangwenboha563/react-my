@@ -11,7 +11,7 @@ import ReactDOM from 'react-dom';
 // import './05_React实现slot/style.css';
 
 // import App from './06_跨组件的通信/01_跨组件通信-props';
-// import App from './06_跨组件的通信/02_跨组件通信-context';
+import App from './06_跨组件的通信/02_跨组件通信-context';
 // import App from './06_跨组件的通信/03_跨组件通信-context函数';
 // import App from './06_跨组件的通信/04_跨组件通信-多个context';
 
@@ -24,7 +24,7 @@ import ReactDOM from 'react-dom';
 // import App from './08_React性能优化/01_列表中keys的作用';
 // import App from './08_React性能优化/02_组件嵌套的render调用';
 // import App from './08_React性能优化/03_shouldComponentUpdate';
-import App from './08_React性能优化/04_PureComponent';
+// import App from './08_React性能优化/04_PureComponent';
 // import App from './08_React性能优化/05_memo的使用';
 
 // import App from './09_前面知识点补充/01_setState不可变的力量';

@@ -15,6 +15,7 @@ const eventBus = new EventEmitter();
 // Home组件
 class Home extends PureComponent {
   componentDidMount() {
+    // 订阅......
     eventBus.addListener("sayHello", this.handleSayHelloListener);
   }
 
@@ -47,7 +48,7 @@ class Profile extends PureComponent {
       </div>
     )
   }
-
+  // 发布---
   emmitEvent() {
     eventBus.emit("sayHello", 123, "Hello Home");
   }
