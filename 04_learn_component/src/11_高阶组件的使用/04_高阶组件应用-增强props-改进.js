@@ -68,4 +68,12 @@ class App extends PureComponent {
 }
 
 export default App;
+/*
+*   增强版和默认版功能是一样的都是利用context给需要共享的组件传递数据 ，但是默认版本的话
+*   home，about，还有其他组件里面都需要xxxx.consumer。看起来很乱..
+*   用高阶组件实现的话，在一个地方consumer就可以了。只要能找到创建出来的UserContext在哪都可以去消费...
+*
+*
+*
+*/
 

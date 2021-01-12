@@ -38,8 +38,7 @@ class App extends PureComponent {
   render() {
     return (
       <div>
-        App
-        准备要去共享数据
+        App 准备要去共享数据，利用context给下级传递数据
         <UserContext.Provider value={{nickname: "why", level: 90, region: "中国"}}>
           <Home/>
           <About/>
