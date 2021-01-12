@@ -17,7 +17,7 @@ class App extends PureComponent {
     }
   }
 
-  NewComponent.displayName = "Kobe"; // 所有的组件都可以给他起个名字~~
+  NewComponent.displayName = "Kobe"; // 所有的组件都可以给他起个名字~~// 这个名字在审查元素的时候能看出来
   return NewComponent;
 }*/
 // 什么是高阶函数
@@ -43,12 +43,13 @@ class Person{
 
 }
 console.dir(Person);
+// 到这里感觉不出来高阶组件有什么作用...
 // 最后导出来的的是 EnhanceComponent，显示到页面上的根也是EnhanceComponent
 export default EnhanceComponent;
 /*
 * 高阶组件并不是react本身自带的，而是一种结合特性而生成的一种设计模式
 * 在一些第三方库中非常常见
-* redux中的connect
+* redux中的connect，connect函数的返回值是一个高阶组件
 * react-router中的withRouter
 *
 *

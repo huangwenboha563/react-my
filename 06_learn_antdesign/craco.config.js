@@ -24,7 +24,7 @@ module.exports = {
   }
 }
 /*
-* 介于cra创建的ract项目
+* 介于cra创建的react项目
 * 1.如果跨域可以在package.json里面配置proxy
 * 2.如果需要配置比较复杂的跨域，可以安装这个http-proxy-middleware  src/setupProxy.js去配置
 *
