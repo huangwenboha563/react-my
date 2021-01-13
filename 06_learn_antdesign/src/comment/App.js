@@ -28,12 +28,14 @@ export default class App extends PureComponent {
   }
 
   submitComment(info) {
+    // 严格遵循不可变得数据的力量
     this.setState({
       commentList: [...this.state.commentList, info]
     })
   }
 
   removeComment(index) {
+    // 严格遵循不可变的数据的力量
     const newCommentList = [...this.state.commentList];
     newCommentList.splice(index, 1);
     this.setState({

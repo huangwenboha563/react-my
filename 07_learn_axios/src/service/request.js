@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import { BASE_URL, TIMEOUT } from "./config";
-// 创建axios实例
+// 创建axios实例，可以创建多个实例
 const instance = axios.create({
   baseURL: BASE_URL, // url请求前缀
   timeout: TIMEOUT // 设置超时

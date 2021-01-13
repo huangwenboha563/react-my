@@ -1,4 +1,5 @@
 const CracoLessPlugin = require('craco-less');
+// node环境自带的path模块
 const path = require("path");
 const resolve = dir => path.resolve(__dirname, dir);
 /*eject这个命令可以将webpack的配置暴露出来*/

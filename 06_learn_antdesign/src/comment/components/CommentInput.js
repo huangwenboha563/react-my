@@ -36,14 +36,14 @@ export default class CommentInput extends PureComponent {
       avatar: "https://upload.jianshu.io/users/upload_avatars/1102036/c3628b478f06.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240",
       nickname: "coderwhy",
       datetime: moment(),
-      content: this.state.content,
+      content: this.state.content,// 通过受控组件拿到textarea中输入的值
       comments: [
         
       ]
     }
 
     this.props.submitComment(commentInfo);
-
+    // 每次点击之后清空输入框的值
     this.setState({
       content: ""
     })

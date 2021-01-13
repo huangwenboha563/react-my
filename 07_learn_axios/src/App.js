@@ -51,20 +51,20 @@ export default class App extends PureComponent {
     //     name: "lilei",
     //     age: 30
     //   }
-    // }).then(console.log);
+    // }).then(console.log); // then里面直接console.log也是可以的。会直接把我们的结果打出来
 
     // axios.post("https://httpbin.org/post", {
     //   name: "lucy", 
     //   age: 28
     // }).then(console.log);
-
+    // 不管是哪种方式去调用-最终调用的都是axios.request
     // axios.request({
 
     // })
 
     // 4.axios部分源码的阅读
 
-    // 5.await async
+    // 5.await async  es7的,如果没有拦截器的话就需要用try catch来拦截错误
     // try {
     //   const result = await axios.get("https://httpbin.org/get", {
     //     params: {
@@ -126,7 +126,7 @@ export default class App extends PureComponent {
     //   }
     // })
     
-    // 9.请求和响应拦截
+    // 9.请求和响应拦截真实项目中不可能放在App.js中
     // 请求拦截
     axios.interceptors.request.use(config => {
       // 1.发送网络请求时, 在界面的中间位置显示Loading的组件

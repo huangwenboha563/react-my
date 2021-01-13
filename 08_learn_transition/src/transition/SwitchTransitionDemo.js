@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 
 import "./SwitchTransition.css";
+// 显示和隐藏切换的时候用这个组件
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
 
 export default class SwitchTransitionDemo extends PureComponent {

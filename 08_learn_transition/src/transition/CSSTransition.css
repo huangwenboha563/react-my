@@ -1,3 +1,4 @@
+/*显示相关*/
 .card-enter, .card-appear {
   opacity: 0;
   transform: scale(.6);
@@ -13,17 +14,20 @@
 
 }
 
+
+/*消失相关*/
+/*准备消失时*/
 .card-exit {
   opacity: 1;
   transform: scale(1);
 }
-
+/*消失中*/
 .card-exit-active {
   opacity: 0;
   transform: scale(.6);
   transition: opacity 300ms, transform 300ms;
 }
-
+/*彻底消失完*/
 .card-exit-done {
   opacity: 0;
 }
