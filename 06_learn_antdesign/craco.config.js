@@ -2,6 +2,7 @@ const CracoLessPlugin = require('craco-less');
 const path = require("path");
 const resolve = dir => path.resolve(__dirname, dir);
 /*eject这个命令可以将webpack的配置暴露出来*/
+// 只要配置文件修改，重新启动服务，重新变异
 module.exports = {
   plugins: [
     {

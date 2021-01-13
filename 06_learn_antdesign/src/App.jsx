@@ -2,12 +2,15 @@ import React, { PureComponent } from 'react';
 // vue自带的功能在react中需要引入一个第三方库
 // import classNames from 'classnames';
 import moment from 'moment';
+// antd 官网中有提到， antd的js代码默认支持基于es modules的tree shaking ,对于js部分直接引入 import { Button } from 'antd',就会有按需加载的效果
+// tree-shaking 比如有一颗树，上面长满了果子，好多果子成熟了，我们就摇晃这颗树，就把摇下来。
+// 比如我页面写了一个var woaini = ""; var aaa = function () {} 但是我整个项目中从来没有用到这个变量和函数。打包的时候就把它移除掉，这样我们的体积就小了
 
 import { Button, DatePicker } from 'antd';
+// 使用icons还需要单独安装
 import { PoweroffOutlined } from '@ant-design/icons';
 
 import HYHomeRecommend from './components/home/childCpns/home-recommend';
-// fdsfsdfsdfsdf
 
 export default class App extends PureComponent {
 	render() {
@@ -16,6 +19,7 @@ export default class App extends PureComponent {
 		return (
 			<>
 				<HYHomeRecommend/>
+				<hr/>
 				<Button type="primary" loading>
 					Loading
 				</Button>
@@ -33,7 +37,7 @@ export default class App extends PureComponent {
 					loading={loadings[1]}
 					onClick={() => this.enterLoading(1)}
 				>
-					Click me!
+					点击我
 				</Button>
 				<Button
 					type="primary"
@@ -41,6 +45,11 @@ export default class App extends PureComponent {
 					loading={loadings[2]}
 					onClick={() => this.enterLoading(2)}
 				/>
+				{/*
+				1.antdDesign在日期中大量用到了moment
+				2.allowClear 是否显示清除按钮，不要设置false即可，需要设置true
+				3.defaultValue用来设置默认值
+				*/}
 				<DatePicker defaultValue={moment('2015-06-06', "YYYY-MM-DD")}
 										allowClear={false}/>
 			</>
