@@ -6,9 +6,7 @@ import ReactDOM from 'react-dom';
 import App from './04_styled-components/app';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+	<App />,
+	document.getElementById('root')
 );
 

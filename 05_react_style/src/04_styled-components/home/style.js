@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const HomeWrapper = styled.div`
   font-size: 12px;
   color: red;
-
+ 
   .banner {
     background-color: blue;
 

@@ -2,12 +2,13 @@ import React, { PureComponent } from 'react';
 
 class LoginPage extends PureComponent {
   render() {
-    return <h2>LoginPage</h2>
+    return <h2>LoginPage，我是登陆页面 我是一堆表单 </h2>
   }
 }
 // 高阶组件
 function withAuth(WrappedComponent) {
   const NewCpn = props => {
+    // 在这里对props进行拦截～～
     const {isLogin} = props;
     if (isLogin) {
       return <WrappedComponent {...props}/>
@@ -24,7 +25,7 @@ function withAuth(WrappedComponent) {
 // 购物车组件（需要登录之后才能看见）
 class CartPage extends PureComponent {
   render() {
-    return <h2>购物车页面</h2>
+    return <h2>购物车页面，只有登陆之后才可以看到我</h2>
   }
 }
 // AuthCartPage 是个组件... 需要鉴权的页面都用withAuth来包裹一下

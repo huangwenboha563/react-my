@@ -9,7 +9,7 @@ class Home extends PureComponent {
 
 // 高阶组件forwardRef
 const Profile = forwardRef(function(props, ref) {
-  return <p ref={ref}>Profile</p>
+  return <p ref={ref}>Profile---{props.name}</p>
 })
 
 export default class App extends PureComponent {

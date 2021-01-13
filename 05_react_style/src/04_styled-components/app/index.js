@@ -23,15 +23,16 @@ const HYPrimaryButton = styled(HYButton)`
 `
 
 export default class App extends PureComponent {
-  render() {
-    return (
-      <ThemeProvider theme={{themeColor: "red", fontSize: "30px"}}>
-        <Home/>
-        <hr/>
-        <Profile />
-        <HYButton>我是普通的按钮</HYButton>
-        <HYPrimaryButton>我是主要的按钮</HYPrimaryButton>
-      </ThemeProvider>
-    )
-  }
+	render() {
+		return (
+			<ThemeProvider theme={{ themeColor: "red", fontSize: "30px" }}>
+				<Home />
+				<hr />
+				<Profile />
+
+				<HYButton>我是普通的按钮</HYButton>
+				<HYPrimaryButton>我是主要的按钮</HYPrimaryButton>
+			</ThemeProvider>
+		)
+	}
 }

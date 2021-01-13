@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 
-import homeStyle from './style.module.css';
+import homeStyle from './style.module.scss';
 
 export default class Home extends PureComponent {
   render() {
