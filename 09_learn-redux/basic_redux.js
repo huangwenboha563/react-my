@@ -26,10 +26,12 @@ const redux = require('redux');
 const initialState = {
   counter: 0
 }
-
+// redux不一定非要和react使用
 // 1.reducer（纯函数）param1,原来的state param2 action 通过type来判断 state第一次么有值的，给一个初始化值
 function reducer(state = initialState, action) {
-  // 不要动人家原来的纯函数
+  // 不要动人家原来state的纯函数
+  // 如果修改了原来的state就不是纯函数了，这在reducer中是不被允许的
+  // 不要修改原来的state，不要修改原来的state，不要修改原来的state
   switch (action.type) {
     case "INCREMENT":
       return { ...state, counter: state.counter + 1 } // ...state里面如果是 {counter: 0}  counter: 1 就把counter: 0 给覆盖了
@@ -48,6 +50,7 @@ function reducer(state = initialState, action) {
 const store = redux.createStore(reducer)
 
 // 订阅store的修改
+// state发生变化的时候在这里获取
 store.subscribe(() => {
   console.log("counter:", store.getState().counter);
 })

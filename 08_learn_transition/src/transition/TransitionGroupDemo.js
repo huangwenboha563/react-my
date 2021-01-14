@@ -19,6 +19,7 @@ export default class TransitionGroupDemo extends PureComponent {
         <TransitionGroup>
           {
             this.state.names.map((item, index) => {
+              // 循环的时候必须添加一个唯一的key
               return (
                 <CSSTransition key={item}
                   timeout={500}
@@ -48,6 +49,8 @@ export default class TransitionGroupDemo extends PureComponent {
 
   removeItem(index) {
     // index indey indez
+    // 还是遵循不可变的力量
+    // this.state.names.filter((item, indey) => index !== indey)返回的是个新数组
     this.setState({
       names: this.state.names.filter((item, indey) => index !== indey)
     })
