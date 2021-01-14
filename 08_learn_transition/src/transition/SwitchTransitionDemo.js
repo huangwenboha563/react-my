@@ -19,12 +19,16 @@ export default class SwitchTransitionDemo extends PureComponent {
     return (
       <div>
         <SwitchTransition mode="out-in">
+          {/*不是以前的in属性了 同理timeout必须加，timeout控制的是动态添加的那些类的时间...*/}
           <CSSTransition key={isOn ? "on": "off"}
                          classNames="btn"
                          timeout={1000}>
-            <button onClick={e => this.setState({isOn: !isOn})}>
-              {isOn ? "on": "off"}
-            </button>
+            <div>
+              <button onClick={e => this.setState({isOn: !isOn})}>
+                {isOn ? "on": "off"}
+                <div>sss</div>
+              </button>
+            </div>
           </CSSTransition>
         </SwitchTransition>
       </div>

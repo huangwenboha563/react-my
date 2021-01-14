@@ -1,3 +1,5 @@
+
+/*进入的时候是从0到1的过程*/
 .btn-enter {
   opacity: 0;
   transform: translateX(100%);
@@ -9,6 +11,10 @@
   transition: opacity 1000ms, transform 1000ms;
 }
 
+
+
+
+/*出去的时候是从1到0的过程*/
 .btn-exit {
   opacity: 1;
   transform: translateX(0);

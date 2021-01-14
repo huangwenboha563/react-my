@@ -38,7 +38,10 @@ export default class TransitionGroupDemo extends PureComponent {
   }
 
   addName() {
+    console.log('添加了')
     this.setState({
+      // 如果 CSSTransition的key设置为item重复添加就会不生效
+      // names: [...this.state.names, "coderwhy"+new Date().getTime()]
       names: [...this.state.names, "coderwhy"]
     })
   }

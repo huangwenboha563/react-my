@@ -31,7 +31,13 @@ export default class CSSTransitionDemo extends PureComponent {
 				unmountOnExit这些属性的介绍在这个里面。
 
 				*/}
-				{/*apper是什么意思呢，如果不加apper如果。容器默认是显示的不会有影响，如果默认是隐藏的，此时我们如果不加apper的话，点击动画就不会显示*/}
+				{/*apper是什么意思呢
+				eg:没有apper属性和对应类名的情况下isShow是false的话，我们点击按钮变为true会有动画这效果没问题。
+				但是此时我们isShow默认为true，我们f5刷新网页，再或者用户初次进入到该页面。我们是看不到这个用CSSTransition包裹的元素从无到有的过程中有动画的，
+				如果这个时候也需要有动画就加上apper属性和在css文件中添加对应的样式。
+				apper可以理解为第一次加载这个组件
+
+				*/}
 				<CSSTransition in={isShow}
 											 classNames="card"
 											 timeout={5000}
