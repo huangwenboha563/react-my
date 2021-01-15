@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 // 引入store
 import store from '../store/ha手动和redux联系';
 // 引入对应的action，要派发
+// home1和about1有太多重复的代码...
 import {
   subAction
 } from "../store/actionCreators";

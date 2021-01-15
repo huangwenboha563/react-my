@@ -17,6 +17,8 @@ function About(props) {
       <h2>当前计数: {props.counter}</h2>
       <button onClick={e => props.decrement()}>-1</button>
       <button onClick={e => props.subNumber(5)}>-5</button>
+      {/*在home3-react-redux-connect中改变store中的值，在这个页面去拿，去遍历，能拿到说明home3-react-redux-connect中成功了*/}
+      {/*此时在Chrome控制台的redux插件中还是看不到任何redux相关的数据的...*/}
       <h1>Banner</h1>
       <ul>
         {
@@ -39,6 +41,7 @@ function About(props) {
 
 const mapStateToProps = state => {
   return {
+    // 在这里获取 轮播图和推荐列表。如果想从store中拿数据就在这拿~~~
     banners: state.banners,
     recommends: state.recommends,
     counter: state.counter
@@ -46,6 +49,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
+  // 如果这个组件中想改变store中的state值在这里修改...
   return {
     decrement: function () {
       dispatch(decAction());

@@ -21,7 +21,7 @@ import {
 // }
 /*
 * action里面最重要的是type，除了type想传啥可以传啥
-*
+* action为什么要写成个函数呢，是为了方便传值。
 */
 export const addAction = num => ({
   type: ADD_NUMBER,

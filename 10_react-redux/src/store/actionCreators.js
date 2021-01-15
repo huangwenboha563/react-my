@@ -24,6 +24,11 @@ import {
 //   }
 // }
 
+
+// es6的语法简写方式
+
+
+
 export const addAction = num => ({
   type: ADD_NUMBER,
   num
@@ -58,7 +63,9 @@ export const changeRecommendAction = (recommends) => ({
 // redux-thunk中定义的 action函数，到时候dispatch需要传递这个
 // dispatch
 // 难道thunk的目的就是为了把异步代码换个位置吗？
+// what fuck  难道thunk的目的就是为了把异步代码搬个家吗，把thunk的代码搬到actionCreators吗
 export const getHomeMultidataAction = (dispatch, getState) => {
+  // dispatch 这个参数是在上一步dispatch的时候自动传递过来的额
   // getState ,如果这次网络请求需要依赖上一次的state可以从getState拿。
   // 把网络请求相关的代码放在这里....
   axios({

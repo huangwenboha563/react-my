@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 *
 */
 import axios from 'axios';
-
+// 引入action是省不掉的
 import {
   incAction,
   addAction,
@@ -22,6 +22,9 @@ import {
 
 class Home extends PureComponent {
   componentDidMount() {
+    // 异步请求能放在这里，但是不建议这样做
+    // 网路请求也属于redux中的一部分，网络请求也和redux关联上...
+    // 在dispatch之后还没到reducer中插入中间件...官方推荐的是redux-thunk
     axios({
       url: "http://123.207.32.32:8000/home/multidata",
     }).then(res => {

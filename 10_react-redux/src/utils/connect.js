@@ -19,7 +19,7 @@ export function connect(mapStateToProps, mapDispachToProp) {
           storeState: mapStateToProps(context.getState())
         }
       }
-
+      // 保证dispatch之后页面数据能刷新
       componentDidMount() {
         this.unsubscribe = this.context.subscribe(() => {
           this.setState({
@@ -40,7 +40,9 @@ export function connect(mapStateToProps, mapDispachToProp) {
           {...mapDispachToProp(this.context.dispatch)} />
       }
     }
-
+    // 为什么要用context呢？就能拿到this.context上的value值了
+    // 在connect的基础上增加context的融入目的就是对connect二次封装便于别人用的时候更方便...这样做的最终目的就是在index.js里面引入一次就可以
+    // 这样就可以不在connect.js里面引入store了....这样就间接的把所有的数据都交给store来管理了
     EnhanceComponent.contextType = StoreContext;
 
     return EnhanceComponent;

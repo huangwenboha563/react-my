@@ -8,7 +8,7 @@ import {
 } from "../store/actionCreators";
 
 function About(props) {
-  /*  */
+  /*  useSelector  */
   const { banners, recommends, counter } = useSelector(state => ({
     banners: state.banners,
     recommends: state.recommends,
