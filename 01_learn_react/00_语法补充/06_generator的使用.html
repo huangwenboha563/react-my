@@ -20,16 +20,17 @@
     // 2.生成器函数的定义
     // 生成器函数 foo是生成器
     function* foo() {
+      // 如果迭代器一次next都不调用的话，这里面的代码是一行都不执行的
       console.log("111");
       yield "Hello";
       console.log("222");
       yield "World";
       console.log("333");
-      yield "coderwhy";
+      yield "hwb";
       console.log("444");
     }
 
-    // iterator: 迭代器 result是一个迭代器，生成器返回的是迭代器
+    // iterator: 迭代器 result是一个迭代器，生成器函数返回的是迭代器
     const result = foo();
     console.log(result);
 
@@ -37,6 +38,7 @@
     // 调用一次next, 就会消耗一次迭代器
     // 如果不调用next foo里面的代码是一行都不会执行的
     const res1 = result.next();
+    // 看res1里面的具体信息，有个done属性，有个value属性
     console.log(res1);
     const res2 = result.next();
     console.log(res2);
@@ -79,7 +81,7 @@
 
     /*const it = bar();
     it.next().value.then(res => {
-      it.next(res)
+      it.next(res) // 把res个 result
     })
 
     (preValue = 0, item) => {};

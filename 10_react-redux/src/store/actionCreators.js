@@ -85,3 +85,4 @@ export const fetchHomeMultidataAction = {
   type: FETCH_HOME_MULTIDATA
 }
 
+// redux thunk的中间件的目的就是dispatch一个方法，在dispatch和reducer之间进行处理

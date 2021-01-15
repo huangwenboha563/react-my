@@ -38,7 +38,8 @@ import {
 // store.dispatch(addAction(5));
 
 // 4.将之前的操作进行封装
-// 封装patchLogging的代码
+// 封装patchLogging的代码---一个非常简单的中间件...
+// patchLogging保证这个是个纯函数...
 function patchLogging(store) {
   const next = store.dispatch;
   function dispatchAndLogging(action) {

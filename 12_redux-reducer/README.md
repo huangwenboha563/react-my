@@ -66,3 +66,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+# 真实项目reducer肯定很大
+
++ 为什么要拆分
++ 怎么拆分
++ 怎么合并 这个比较简单就是合并...

@@ -80,3 +80,11 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 ); */
+/*
+* 补充：
+* import store from "./store";
+* import { Provider} from "react-redux";这个操作本质上就是利用context传递state，有的人喜欢把这一步骤放在App.js中
+* 总之放在最顶层就可以了
+*
+*
+* */
