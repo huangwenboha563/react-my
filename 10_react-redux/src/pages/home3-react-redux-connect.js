@@ -45,6 +45,7 @@ class Home extends PureComponent {
     this.props
     
     */
+    console.log('home的props',this.props);
     return (
       <div>
         <h1>Home</h1>

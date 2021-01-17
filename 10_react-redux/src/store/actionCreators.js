@@ -50,6 +50,7 @@ export const decAction = () => ({
 
 // 轮播图和推荐的action
 export const changeBannersAction = (banners) => ({
+  // banners到时候会被传递到reducer中的第二个参数
   type: CHANGE_BANNERS,
   banners
 });

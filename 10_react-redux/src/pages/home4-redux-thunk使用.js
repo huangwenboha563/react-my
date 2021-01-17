@@ -49,5 +49,5 @@ const mapDispatchToProps = dispatch => ({
     dispatch(getHomeMultidataAction);
   }
 })
-
+// { increment }
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

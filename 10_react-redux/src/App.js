@@ -36,15 +36,15 @@ export default class App extends PureComponent {
 
 
                 {/*3.使用第三方的connect*/}
-                {/* <Home3></Home3>
-                <About3></About3> */}
+                <Home3></Home3>
+                <About3></About3>
 
 
 
 
                 {/*4.redux-thunk*/}
-                <Home4></Home4>
-                <About4></About4>
+                {/*<Home4></Home4>*/}
+                {/*<About4></About4>*/}
 
 
 

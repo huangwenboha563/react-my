@@ -10,7 +10,9 @@ import {
 
 // 我想爆粗口，saga的目的也是为了让网络请求的代码再换个地方
 function* fetchHomeMultidata(action) {
+  // action可以携带一些参数，只是这里没有携带...
   // 不需要再.get之后去then，res就直接是我们请求的结果了
+  // 这里可以调用yield call的api，不知道这个教程为什么不用call
   const res = yield axios.get("http://123.207.32.32:8000/home/multidata");
   const banners = res.data.data.banner.list;
   const recommends = res.data.data.recommend.list;
@@ -31,6 +33,7 @@ function* mySaga() {
   // takeEvery: 每一个都会被执行，触发了多少次就执行多少次
   // yield takeEvery(FETCH_HOME_MULTIDATA,fetchHomeMultidata)
   // 统一在这里监听...
+  // yield all([]) // 这个数组里面到底能传啥
   yield all([
     takeLatest(FETCH_HOME_MULTIDATA, fetchHomeMultidata), // fetchHomeMultidata生成器函数
     // takeLatest(ADD_NUMBER, fetchHomeMultidata),

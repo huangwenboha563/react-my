@@ -36,7 +36,7 @@ ReactDOM.render(
 
 // 3.上面是通过自己封装的connect，利用context里面的Provider
 // 用第三方库react-redux，自带connect方法和Provider
-/* import React from 'react';
+ import React from 'react';
 import ReactDOM from 'react-dom';
 import store from "./store/第三方connect";
 import { Provider} from "react-redux";
@@ -47,22 +47,21 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
- */
 
 
 
 // 4.使用redux-thunk
-import React from 'react';
-import ReactDOM from 'react-dom';
-import store from "./store/使用redux-thunk";
-import { Provider} from "react-redux";
-import App from './App';
-ReactDOM.render(
-    <Provider store={store}>
-        <App></App>
-    </Provider>,
-    document.getElementById('root')
-);
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import store from "./store/使用redux-thunk";
+// import { Provider} from "react-redux";
+// import App from './App';
+// ReactDOM.render(
+//     <Provider store={store}>
+//         <App></App>
+//     </Provider>,
+//     document.getElementById('root')
+// );
 
 
 
