@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react'
 
+
+
 export default class App extends PureComponent {
   constructor(props) {
     super(props);
@@ -8,7 +10,6 @@ export default class App extends PureComponent {
       username: ""
     }
   }
-
   render() {
     return (
       <div>
@@ -17,8 +18,12 @@ export default class App extends PureComponent {
           <label htmlFor="username">
             用户:
             {/* 受控组件 */}
+            {/*demo1*/}
             {/*<input type="text" id="username" onChange={(e) => this.handleChange(e)} value={this.state.username} />*/}
-             <input type="text" id="username" onChange={this.handleChangeSecond('username')} value={this.state.username} />
+            {/*demo2,关于事件对象的传递*/}
+            <input type="text" id="username" onChange={this.handleChangeAgain} value={this.state.username} />
+            {/*demo3*/}
+            {/* <input type="text" id="username" onChange={this.handleChangeSecond('username')} value={this.state.username} />*/}
           </label>
           <input type="submit" value="提交" />
         </form>
@@ -36,7 +41,13 @@ export default class App extends PureComponent {
       username: event.target.value
     })
   }
-  // 第二种用法（在网上看到的第二种用法）
+  // 第二种用法传递事件对象
+  handleChangeAgain = (event) =>  {
+    this.setState({
+      username: event.target.value
+    })
+  }
+  // 第三种用法（在网上看到的第二种用法）
   handleChangeSecond(dataType) {
     console.log(dataType);
     return (event) => {
@@ -46,3 +57,6 @@ export default class App extends PureComponent {
     }
   }
 }
+
+
+

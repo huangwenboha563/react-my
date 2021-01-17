@@ -59,10 +59,18 @@ export default class App extends PureComponent {
 		// 2.推荐做法，如果用的是PureComponent就必须这样做才起作用，因为内部用了浅层比较
 		// 3.最简单粗暴的可以对老数据进行深拷贝，对拷贝完的数据进行修改。完了setState(修改后的对象)
 		// 4.这样搭配shouldComponentUpdate优化或者PureComponent都是可以的
+		// 改变1
 		const newFriends = [...this.state.friends];
 		newFriends.push({ name: "tom", age: 30 });
+		// 改变2
+		const {friends} = this.state;
+		friends.push({ name: "tom", age: 30 })
 		this.setState({
-			friends: newFriends
+			// 改变1
+			friends: [...friends]
+			// 改变2
+			// friends: newFriends
+			// 总之 friends:xxx    xxx不能是原来的按个引用地址,要么简单拷贝一份，要么深拷贝一份
 		})
 	}
 
