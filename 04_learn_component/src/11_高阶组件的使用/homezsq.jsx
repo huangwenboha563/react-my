@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-
+// 高阶组件1
 function withProps(WrappedComponent) {
 	// 在这里做了劫持~~~~~
 	return props => {
@@ -7,6 +7,8 @@ function withProps(WrappedComponent) {
 	}
 }
 
+
+// 高阶组价2
 function withRenderTime(WrappedComponent) {
 	return class extends PureComponent {
 		// 即将渲染获取一个时间 beginTime
@@ -27,8 +29,10 @@ function withRenderTime(WrappedComponent) {
 		}
 	}
 }
+// 装饰器写法
 @withProps
 @withRenderTime
+// 装饰器写法
 class Home extends PureComponent {
 	render() {
 		return (
@@ -38,9 +42,11 @@ class Home extends PureComponent {
 				<h3>我是装饰器写法----{this.props.region}</h3>
 			</div>
 		)
-
 	}
 }
+
+
+
 export default Home
 
 
