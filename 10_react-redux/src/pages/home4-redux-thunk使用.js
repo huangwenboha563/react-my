@@ -46,6 +46,7 @@ const mapDispatchToProps = dispatch => ({
     // getHomeMultidataAction传递一个函数，传入的这个函数会被主动调用~~~~~~~~~
     // 通常情况下dispatch派发的是一个对象，如果用thunk就可以派发一个方法了，getHomeMultidataAction异步操作在这个方法里面
     // getHomeMultidataAction千万不要加() 这个函数到时候会被主动的调用
+    // 整个流程，需要两次dispatch，第一次dispatch一个方法，第二次在这个getHomeMultidataAction里面dispatch reducer里面的，真正的去修改
     dispatch(getHomeMultidataAction);
   }
 })

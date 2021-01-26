@@ -11,7 +11,7 @@ function About(props) {
   return (
     <div>
       <hr />
-      <h1>About</h1>
+      <h1>About--我是about</h1>
       <h2>当前计数: {props.counter}</h2>
       <button onClick={e => props.decrement()}>-1</button>
       <button onClick={e => props.subNumber(5)}>-5</button>
@@ -54,4 +54,7 @@ const mapDispatchToProps = dispatch => {
   }
 };
 
+
+// About 也可以是一个函数式组件...
+// 为什么看另一篇教程的时候非要改成class组件呢？？
 export default connect(mapStateToProps, mapDispatchToProps)(About);

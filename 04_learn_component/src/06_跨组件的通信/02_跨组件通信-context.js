@@ -11,7 +11,14 @@ const themeContext = React.createContext({
 })
 
 class ProfileHeader extends Component {
+	constructor(props, context) {
+		super(props, context);
+		// 在这里也可以找到context...
+		console.log(context);
+	}
+
 	render() {
+		// 顶层共享的数据就传递到需要使用它的组件里面了，这也是react-redux中connect的原理
 		console.log(this.context);
 		// jsx ->
 		/*return (
@@ -21,6 +28,7 @@ class ProfileHeader extends Component {
 			</div>		)
 */
 		return (
+			// consumer 原理其实就是 render props模式 看好客租房那个项目 第三天的 那个render prpos的介绍
 			<themeContext.Consumer>
 				{
 					value => {
@@ -47,7 +55,7 @@ ProfileHeader.contextType = UserContext;
 function Profile(props) {
 	return (
 		<div>
-			<ProfileHeader/>
+			<ProfileHeader />
 			<ul>
 				<li>设置1</li>
 				<li>设置2</li>
@@ -76,12 +84,10 @@ export default class App extends Component {
                 </UserContext.Provider>
                 <Profile/> */}
 				{/*这种情况下会找默认值*/}
-
-
-				<hr/>
+				<hr />
 				<UserContext.Provider value={this.state}>
 					<themeContext.Provider value={{ color: 'blue' }}>
-						<Profile/>
+						<Profile />
 					</themeContext.Provider>
 				</UserContext.Provider>
 			</div>

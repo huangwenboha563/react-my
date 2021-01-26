@@ -1,4 +1,4 @@
-import React, { useRef ,forwardRef } from 'react';
+import React, { useRef, forwardRef } from 'react';
 
 
 /* 
@@ -16,58 +16,65 @@ import React, { useRef ,forwardRef } from 'react';
 *  2.引用组件（必须是class组件）
 *
 */
+
 /* 类组件 */
 class TestCpn extends React.Component {
-  render() {
-    return <h2>TestCpn</h2>
-  }
+	render() {
+		return <h2>TestCpn class 组件</h2>
+	}
 }
 
 /* function TestCpn2(props) {
   return <h2>TestCpn2</h2>
 } */
 
-const TestCpn2 = forwardRef((props,ref) => {
-  return <h2 ref={ref}>TestCpn2</h2>
+const TestCpn2 = forwardRef((props, ref) => {
+	return <h2 ref={ref}>TestCpn2 函数组件经过ref转发的</h2>
 })
+
 function TestCpnlz(props) {
-  return <h2>TestCpn2</h2>
+	return <h2>TestCpn纯函数，没有转发的</h2>
 }
 
 export default function RefHookDemo01() {
-  // 普通dom一个h2标签
-  const h2ref = useRef();
-  // 普通dom一个input标签
-  const inputRef = useRef();
-  // 给一个类组件添加一个ref属性
-  const testRef = useRef();
-  // 给一个函数组建添加一个ref属性
-  const testRef2 = useRef();
-  // lz test
-  const testReflz = useRef();
-  function changeDOM() {
-    h2ref.current.innerHTML = "Hello World";
-    inputRef.current.focus();
-    console.log(testRef.current);
-    console.log(testRef2);
-    console.log(testReflz);
-  }
+	// 普通dom一个h2标签
+	const h2ref = useRef();
+	// 普通dom一个input标签
+	const inputRef = useRef();
+	// 给一个类组件添加一个ref属性
+	const testRef = useRef();
+	// 给一个函数组建添加一个ref属性
+	const testRef2 = useRef();
+	// lz test
+	const testReflz = useRef();
 
-  return (
-    <div>
-      <h2 ref={h2ref}>RefHookDemo01</h2>
-      <input ref={inputRef} type="text"/>
-      <TestCpn ref={testRef}/>
-      <TestCpn2 ref={testRef2}/>
-      <TestCpnlz lzRef={testReflz}/>
+	function changeDOM() {
+		h2ref.current.innerHTML = "Hello World";
+		inputRef.current.focus();
+		console.log(testRef.current);
+		console.log(testRef2);
+		console.log(testReflz);
+	}
 
-      {/*
+	return (
+		<div>
+			<h2 ref={h2ref}>RefHookDemo01</h2>
+			<input ref={inputRef} type="text" />
+			<TestCpn ref={testRef} />
+			<hr />
+			<TestCpn2 ref={testRef2} />
+			<hr />
+			{/* 这样会报错的....总之不能直接给一个函数组件加ref*/}
+			{/*Warning: Function components cannot be given refs. Attempts to access this ref will fail. Did you mean to use React.forwardRef()?*/}
+			<TestCpnlz ref={testReflz} />
+			<hr />
+			{/*
       TestCpn2是函数式组件不能用ref函数式组件没有this，如果用了控制太会报错warning--借助React.fowardref
       可以看组件的内容补充那一章节
       fowardref是一个高阶组件...
       */}
 
-      <button onClick={e => changeDOM()}>修改DOM</button>
-    </div>
-  )
+			<button onClick={e => changeDOM()}>修改DOM</button>
+		</div>
+	)
 }

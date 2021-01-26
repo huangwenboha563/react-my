@@ -17,6 +17,8 @@ export default function EffectHookCancelDemo() {
         console.log("订阅一些事件"); // 初始化的时候会执行订阅
 
         return () => {
+            // 需要在组件的时候做些事情，写在这里。同时第二个参数必须是[]
+            // 可以有多个useEffect
             // 上面的定时器需要在这里清除（相当于在componentWillUnmount（卸载这个定时器））
             console.log("取消订阅事件") // 该组件销毁的时候会执行这个return出来的方法
         }

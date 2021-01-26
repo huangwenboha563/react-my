@@ -26,9 +26,12 @@ export default memo(function App() {
                 {/*头部*/}
                 <HYAppHeader/>
                 {/*中间路由切换变化的地方*/}
-                {/*如果用了路由懒加载就要用这个*/}
+                {/*如果用了路由懒加载就要用这个，这样就可以在切换路由的时候显示loading了...*/}
                 <Suspense fallback={<div>page loading</div>}>
-                    {renderRoutes(routes)}
+                    {
+                      // 这里放的是异步组件...
+                      renderRoutes(routes)
+                    }
                 </Suspense>
                 {/*底部*/}
                 <HYAppFooter/>

@@ -10,8 +10,9 @@ import reducer from './reducer';
 *  param2,初始值
 *  如果你的页面state很简单，可以直接使用useState
 *  如果你的页面state比较复杂（state是一个对象或者state非常多散落在各处）请使用userReducer
-*  https://blog.dyboy.cn/program/177.html 
-*  参考这篇文章
+*  https://blog.dyboy.cn/program/177.html
+*  https://blog.csdn.net/vitaviva/article/details/104508139
+*  参考这两篇文章
 */
 export default function Home() {
     // const [count, setCount] = useState(0);

@@ -6,7 +6,6 @@
   <title>Document</title>
 </head>
 <body>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/immutable/3.8.2/immutable.min.js"></script>
   <script>
     const im = Immutable;
@@ -27,7 +26,7 @@
     const infoIM2 = infoIM.set("name", "why");
     console.log(obj.get("name"));
     console.log(infoIM2.get("name"));
-
+    // 补充如果嵌套层级深的话setIn的用法
     // List的使用
     const names = ["abc", "cba", "nba"];
     // const arr = names;
@@ -39,8 +38,27 @@
 
     console.log(namesIM.get(0),namesIM._tail.array);
     console.log(arrIM.get(0),arrIM._tail.array);
-
-    /*const info = {
+    // namesIM 上有那些静态属性和方法呢？
+    // 1. List.isList(namesIM)
+    // 2. namesIM.size
+    // 实例对象上的方法
+    // 1.设置和获取第一个位置的值
+    // namesIM.set(0,'我是新值')
+    // namesIM.get(0)
+    // 删除和插入
+    // namesIM.delete(0)
+    // namesIM.insert('0','你好吗')
+    // 更新,索引是1的给更新为原来的值的两倍
+    // namesIM.update(1,( value )=> {
+    //   return value*2
+    // })
+    // push 和 pop
+    // namesIM.push('滚蛋...')   namesIM.pop()
+    // setIn数组里面也有setin
+    // 还有contact map filter find findIndex等方法，如果某个场景需要使用去看官网...
+    // 还有转换为js的那些 toJs toJson 啥的
+    /*
+    const info = {
       name: "kobe",
       age: 30,
       friend: {
@@ -51,8 +69,16 @@
 
     // const infoIM = im.Map(info);
     const infoIM = im.fromJS(info);
-    console.log(infoIM.get("friend"));*/
+    console.log(infoIM.get("friend"));
+    */
 
+
+    /*
+    * immutablejs是为了简化我们不可变力量中的语法
+    *
+    *
+    */
+    // 不管是List  还是 Map  总之原来的数据不会被改变....  需要用到什么去官网看...
   </script>
 </body>
 </html>

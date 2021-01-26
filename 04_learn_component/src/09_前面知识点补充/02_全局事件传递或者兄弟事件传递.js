@@ -21,7 +21,8 @@ class Home extends PureComponent {
     // 订阅......
     eventBus.addListener("sayHello", this.handleSayHelloListener);
   }
-
+  // 一定要在这里进行取消订阅，如果不取消订阅就会造成内存泄漏。...闭包的内存泄漏...  还有各种定时器等。。。都要在这里取消...
+  // 比如我们的home组件...是别人的一个自组件。Home频繁的显示和不显示的时候，如果不在componentWillUnmount中给去掉订阅。的 话就会造成内存泄漏...this找不到...
   componentWillUnmount() {
     eventBus.removeListener("sayHello", this.handleSayHelloListener);
   }

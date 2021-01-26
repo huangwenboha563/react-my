@@ -7,11 +7,12 @@ import axios from 'axios';
 
 import {
   incAction,
-  addAction,
+  addAction
+} from '../store/counter/actionCreators'
+import {
   changeBannersAction,
   changeRecommendAction
-} from '../store/actionCreators'
-
+} from '../store/home/actionCreators'
 class Home extends PureComponent {
   componentDidMount() {
     axios({
@@ -26,7 +27,7 @@ class Home extends PureComponent {
   render() {
     return (
       <div>
-        <h1>Home</h1>
+        <h1>Home--我是home</h1>
         <h2>当前计数: {this.props.counter}</h2>
         <button onClick={e => this.props.increment()}>+1</button>
         <button onClick={e => this.props.addNumber(5)}>+5</button>

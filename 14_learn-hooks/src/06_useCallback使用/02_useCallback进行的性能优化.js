@@ -62,3 +62,10 @@ export default function CallbackHookDemo02() {
         </div>
     )
 }
+/*
+* 总结useMemo和useCallback都是用来做性能优化的....
+* useMemo缓存的是 一个 state结果
+* useCallback缓存的是一个方法
+*
+*
+*/

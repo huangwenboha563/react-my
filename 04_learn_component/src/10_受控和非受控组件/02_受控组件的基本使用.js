@@ -41,13 +41,13 @@ export default class App extends PureComponent {
       username: event.target.value
     })
   }
-  // 第二种用法传递事件对象
+  // 第二种用法传递事件对象 //  handleChangeAgain不带()。只能在这里接受event对象
   handleChangeAgain = (event) =>  {
     this.setState({
       username: event.target.value
     })
   }
-  // 第三种用法（在网上看到的第二种用法）
+  // 第三种用法（在网上看到的第二种用法） // handleChangeSecond('参数') // 带花括号，既能接受参数还能接受事件对象
   handleChangeSecond(dataType) {
     console.log(dataType);
     return (event) => {

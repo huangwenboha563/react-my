@@ -35,6 +35,10 @@ export function connect(mapStateToProps, mapDispachToProp) {
       render() {
         /*WrappedComponent其实就是about和home组件*/
         /*mapStateToProps(this.context.getState())是个对象，用展开运算符展开*/
+        /*
+        *   this.context上为什么有 getState和dispatch方法呢 是因为 通过context 的 provider 的 value属性传递到全局的。
+        *
+        */
         return <WrappedComponent {...this.props}
           {...mapStateToProps(this.context.getState())}
           {...mapDispachToProp(this.context.dispatch)} />

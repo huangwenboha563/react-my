@@ -10,7 +10,11 @@ export default class App extends PureComponent {
 				{ name: "lilei", age: 20 },
 				{ name: "lily", age: 25 },
 				{ name: "lucy", age: 22 }
-			]
+			],
+			obj: {
+				name: 'hwb',
+				age: 18
+			}
 		}
 	}
 
@@ -26,6 +30,8 @@ export default class App extends PureComponent {
 	render() {
 		return (
 			<div>
+				<h3>{this.state.obj.name}</h3>
+				<h3>{this.state.obj.age}</h3>
 				<h2>好友列表:</h2>
 				<ul>
 					{
@@ -63,11 +69,17 @@ export default class App extends PureComponent {
 		const newFriends = [...this.state.friends];
 		newFriends.push({ name: "tom", age: 30 });
 		// 改变2
-		const {friends} = this.state;
+		const { friends } = this.state;
 		friends.push({ name: "tom", age: 30 })
 		this.setState({
 			// 改变1
-			friends: [...friends]
+			friends: [...friends],
+			// 顺带尝试改变对象的值
+			// obj: {
+			// 	...this.state.obj, name: 'lk'
+			// },
+			// 改变obj的第二种方式
+			obj: Object.assign({},this.state.obj,{name:'lk'})
 			// 改变2
 			// friends: newFriends
 			// 总之 friends:xxx    xxx不能是原来的按个引用地址,要么简单拷贝一份，要么深拷贝一份

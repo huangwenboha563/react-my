@@ -26,9 +26,9 @@ import CustomContextShareHook from './11_自定义Hook/02_自定义Hook练习-Co
 import CustomScrollPositionHook from './11_自定义Hook/03_自定义Hook练习-获取滚动位置';
 import CustomDataStoreHook from './11_自定义Hook/04_自定义Hook练习-localStorage存储';
 
-
-export const UserContext = createContext();
-export const TokenContext = createContext();
+// 默认的context
+export const UserContext = createContext({name: "defaultwhy", age: 10});
+export const TokenContext = createContext({fontSize: "20px", color: "yellow"});
 
 export const ThemeContext = createContext();
 
@@ -53,11 +53,27 @@ export default function App() {
             {/* <MultiEffectHookDemo/> */}
 
             {/* 4.useContext */}
-            {/* <UserContext.Provider value={{name: "why", age: 18}}>
+            {/*
+
+            <UserContext.Provider value={{name: "why", age: 18}}>
                 <ThemeContext.Provider value={{fontSize: "30px", color: "red"}}>
                     <ContextHookDemo/>
                 </ThemeContext.Provider>
-            </UserContext.Provider> */}
+            </UserContext.Provider>
+
+
+            */}
+
+
+
+
+
+
+            {/*useContext的第二种用法，纯粹不用Provider*/}
+            {/*<ContextHookDemo/>*/}
+
+
+
 
             {/* 5.useReducer */}
             {/* <Home/>

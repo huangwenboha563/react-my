@@ -1,3 +1,4 @@
+// state就是useReducer里面的那个第二个参数 {counter: 0}
 export default function reducer(state, action) {
   switch(action.type) {
     case "increment":

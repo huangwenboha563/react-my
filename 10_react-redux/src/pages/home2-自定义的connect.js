@@ -19,6 +19,8 @@ class Home extends PureComponent {
   }
 }
 
+
+//
 const mapStateToProps = state => ({
   counter: state.counter
 })
@@ -31,5 +33,5 @@ const mapDispatchToProps = dispatch => ({
     dispatch(addAction(num));
   }
 })
-//
+// 抛出来疑问？这个Home能使sfc 函数组件吗
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

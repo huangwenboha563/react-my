@@ -14,66 +14,97 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 // 引入action是省不掉的
 import {
-  incAction,
-  addAction,
-  changeBannersAction,
-  changeRecommendAction
+	incAction,
+	addAction,
+	changeBannersAction,
+	changeRecommendAction
 } from '../store/actionCreators'
 
-class Home extends PureComponent {
-  componentDidMount() {
-    // 异步请求能放在这里，但是不建议这样做
-    // 网路请求也属于redux中的一部分，网络请求也和redux关联上...
-    // 在dispatch之后还没到reducer中插入中间件...官方推荐的是redux-thunk
-    axios({
-      url: "http://123.207.32.32:8000/home/multidata",
-    }).then(res => {
-      const data = res.data.data;
-      /* 
-      this.props
-      this.props
-      */
-      this.props.changeBanners(data.banner.list);
-      this.props.changeRecommends(data.recommend.list);
-    })
-  }
+// 装饰器写法
+@connect(
+	state => ({ counter: state.counter }),
+	// 装饰器写法1
+	// dispatch => ({
+	// 	increment() {
+	// 		dispatch(incAction());
+	// 	},
+	// 	addNumber(num) {
+	// 		dispatch(addAction(num));
+	// 	},
+	// 	changeBanners(banners) {
+	// 		dispatch(changeBannersAction(banners));
+	// 	},
+	// 	changeRecommends(recommends) {
+	// 		dispatch(changeRecommendAction(recommends));
+	// 	}
+	// }),
+	// 装饰器写法2... // 很好奇装饰器写法dispatch过去的？
+	{
+		// increment:() => (incAction()),
+		increment() {
+			return incAction()
+		},
+		addNumber: (num) => (addAction(num)),
+		changeBanners: (banners) => (changeBannersAction(banners)),
+		changeRecommends: (recommends) => (changeRecommendAction(recommends))
+	}
+)
 
-  render() {
-    /* 
-    this.props
-    this.props
-    this.props
-    
-    */
-    console.log('home的props',this.props);
-    return (
-      <div>
-        <h1>Home</h1>
-        <h2>当前计数: {this.props.counter}</h2>
-        <button onClick={e => this.props.increment()}>+1</button>
-        <button onClick={e => this.props.addNumber(5)}>+5</button>
-      </div>
-    )
-  }
+
+class Home extends PureComponent {
+	componentDidMount() {
+		// 异步请求能放在这里，但是不建议这样做
+		// 网路请求也属于redux中的一部分，网络请求也和redux关联上...
+		// 在dispatch之后还没到reducer中插入中间件...官方推荐的是redux-thunk
+		axios({
+			url: "http://123.207.32.32:8000/home/multidata",
+		}).then(res => {
+			const data = res.data.data;
+			/*
+			this.props
+			this.props
+			*/
+			this.props.changeBanners(data.banner.list);
+			this.props.changeRecommends(data.recommend.list);
+		})
+	}
+
+	render() {
+		/*
+		this.props
+		this.props
+		this.props
+
+		*/
+		console.log('home的props', this.props);
+		return (
+			<div>
+				<h1>Home</h1>
+				<h2>当前计数: {this.props.counter}</h2>
+				<button onClick={e => this.props.increment()}>+1</button>
+				<button onClick={e => this.props.addNumber(5)}>+5</button>
+			</div>
+		)
+	}
 }
 
-const mapStateToProps = state => ({
-  counter: state.counter
+const mapStateToProps = (state, props) => ({
+	counter: state.counter
 })
 
-const mapDispatchToProps = dispatch => ({
-  increment() {
-    dispatch(incAction());
-  },
-  addNumber(num) {
-    dispatch(addAction(num));
-  },
-  changeBanners(banners) {
-    dispatch(changeBannersAction(banners));
-  },
-  changeRecommends(recommends) {
-    dispatch(changeRecommendAction(recommends));
-  }
+const mapDispatchToProps = (dispatch, props) => ({
+	increment() {
+		dispatch(incAction());
+	},
+	addNumber(num) {
+		dispatch(addAction(num));
+	},
+	changeBanners(banners) {
+		dispatch(changeBannersAction(banners));
+	},
+	changeRecommends(recommends) {
+		dispatch(changeRecommendAction(recommends));
+	}
 })
 /* 
 connect是一个函数，返回的是一个高阶组件
@@ -81,7 +112,8 @@ var demo = connect(mapStateToProps, mapDispatchToProps)
 demo是一个高阶组件（）
 
 */
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+// export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default Home;
 /*
 * 如何在redux中进行异步操作呢？
 * 答案就是使用中间件 Middleware

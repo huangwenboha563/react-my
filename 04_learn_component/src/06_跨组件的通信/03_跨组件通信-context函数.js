@@ -7,6 +7,9 @@ const UserContext = React.createContext({
 })
 // 如果 ProfileHeader是函数式组件，02_跨组件通信-context这个例子中它是class组件
 // xxx.Consumer如果是函数式组件是这个用法，class组件也可以这样用
+// 有个误区，Consumer的用法 class组件也可以使用```
+
+// 如果用了useContext这个代码会减少很多...
 
 function ProfileHeader() {
   return (
