@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { TabBar } from 'antd-mobile';
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 // home中的首页
 import Index from '../Index'
 // home中的找房子
@@ -25,7 +25,7 @@ class Home extends Component {
 		return (
 			<div className='home'>
 				{/*理解嵌套路由的套路*/}
-				<Route path='/home/index' component={Index}></Route>
+				<Route exact path='/home' component={Index}></Route>
 				<Route path='/home/list' component={HouseList}></Route>
 				<Route path='/home/news' component={News}></Route>
 				<Route path='/home/profile' component={Profile}></Route>
@@ -38,13 +38,13 @@ class Home extends Component {
 							icon={<i className={"iconfont icon-ind"} />}
 							selectedIcon={<i className={"iconfont icon-ind"} />}
 							// 满足这个条件就高亮
-							selected={this.state.selectedTab === '/home/index'}
+							selected={this.state.selectedTab === '/home'}
 							// 每次点击都改变selectedTab的值，才能保证每次点击的时候都高亮
 							onPress={() => {
 								this.setState({
-									selectedTab: '/home/index',
+									selectedTab: '/home',
 								});
-								this.props.history.push('/home/index');
+								this.props.history.push('/home');
 							}}
 							data-seed="logId"
 						>

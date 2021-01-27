@@ -1,0 +1,20 @@
+{
+  "name": "learnumi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "umi dev",
+    "build": "umi build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "add": "^2.0.6",
+    "yarn": "^1.22.10"
+  },
+  "devDependencies": {
+    "@umijs/plugin-antd": "^0.9.1"
+  }
+}
