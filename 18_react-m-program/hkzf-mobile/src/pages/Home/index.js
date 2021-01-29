@@ -20,10 +20,22 @@ class Home extends Component {
 			selectedTab: this.props.location.pathname,
 		}
 	}
-
+	// 我们点击首页的nav菜单时候，对应的tabbar没有高亮
+	// 原因是我们原来实现该功能的时候，点击tabbar和第一次加载home或者刷新的情况
+	// 解决方案：当点击nav导航的时候，会执行Home组件的componentDidUpdatae
+	// 我怎么知道路由切换了呢？再查查componentUpdate能干什么...
+	componentDidUpdate(prevProps,prevState) {
+		console.log('上一次',prevProps.location.pathname)
+		console.log('当前',this.props.location.pathname)
+		if (prevProps.location.pathname !== this.props.location.pathname) {
+			this.setState({
+				selectedTab: this.props.location.pathname
+			})
+		}
+	}
 	render() {
 		return (
-			<div className='home'>
+			<div className='home' style={{paddingBottom:'50px  '}}>
 				{/*理解嵌套路由的套路*/}
 				<Route exact path='/home' component={Index}></Route>
 				<Route path='/home/list' component={HouseList}></Route>

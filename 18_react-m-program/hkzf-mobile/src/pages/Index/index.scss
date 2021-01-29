@@ -1,0 +1,62 @@
+/* 在我们的项目中安装node-sass 把文件名改成.scss结尾的就可以直接用sass语法来写我们的css样式了 */
+/* https://blog.csdn.net/yaya07755/article/details/96834875 */
+.nav .am-flexbox-item {
+    text-align: center;
+    padding: 10px 0px;
+}
+.nav .am-flexbox-item img {
+    width: 48px;
+}
+.nav .am-flexbox-item >div {
+    padding: 3px 0;
+}
+.group-con {
+    padding: 0 15px;
+    .top {
+        display: flex;
+        justify-content: space-between;
+        height: 36px;
+        line-height: 36px;;
+    }
+    .group-wrapper {
+        .left {
+            p {
+                font-size: 14px;
+                margin-bottom: 4px;;
+            }
+            span {
+                font-size: 13px;
+                color: #bbb;
+            }
+        }
+        .group-img-con {
+            img{
+                width: 54px;;
+            }
+        }
+    }
+}
+.news-con {
+    padding: 10px;
+    .flex-news {
+        margin: 4px 0px;
+        display: flex;
+        .img-con {
+            width: 105px;
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+        .flex-right {
+            flex: 1;
+        }
+        .flex-right>div {
+            height: 100%;
+            .news-bottom {
+                width: 100%;
+            }
+        }
+    }
+}
+
