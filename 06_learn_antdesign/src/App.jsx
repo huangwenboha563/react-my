@@ -73,7 +73,7 @@ export default class App extends PureComponent {
 //     const isBar = false;
 //     const errClass = "error";
 //     const warnClass = 10;
-
+// 动态添加class
 //     return (
 //       <div>
 //         {/* 原生React中添加class方法 最传统的方式什么都不用，在vue里面动态添加class还是比较容易的*/}

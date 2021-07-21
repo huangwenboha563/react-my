@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class App extends Component {
+export default class App extends  Component{
 	constructor(props) {
 		super(props);
 
@@ -24,6 +24,7 @@ export default class App extends Component {
 
 	// 默认是返回true，这样的话，点击改变文本就不执行render了，只有点击+1才会执行render
 	// 子组件不依赖 message，message改的时候不希望子组件的render方法也执行
+	// 点击+1的时候 App render函数被调用 一直会被执行，但是点击改变文本的时候不会一直执行，试想，如果 一个子组件没有依赖
 	shouldComponentUpdate(nextProps, nextState) {
 		if (this.state.counter !== nextState.counter) {
 			return true;

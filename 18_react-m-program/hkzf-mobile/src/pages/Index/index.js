@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // antd-mobile
 import { Carousel, Flex, Grid } from 'antd-mobile'
+import {getCurCity} from  '../../utils'
 // react 中使用图片
 import nav1 from '../../assets/images/nav-1.png'
 import nav2 from '../../assets/images/nav-2.png'
@@ -80,17 +81,11 @@ class HomeIndex extends Component {
 		// 地图api获取城市信息
 		this.getLocalCity();
 	}
-	getLocalCity() {
-		const myCity = new window.BMap.LocalCity();
-		myCity.get(async (res) => {
-			const name = res.name;
-			const cityRes = await axios.get(`http://localhost:8080/area/info?name=${name}`);
-			console.log(cityRes)
-			const realName = cityRes.data.body.label;
-			this.setState({
-				myName: realName
-			})
-		});
+	async getLocalCity() {
+		const res = await getCurCity();
+		this.setState({
+			myName: res.label
+		})
 	}
 	// 渲染轮播图的方法，提取出来的好处是render看上去没有那么多业务代码...
 	renderSwiper() {

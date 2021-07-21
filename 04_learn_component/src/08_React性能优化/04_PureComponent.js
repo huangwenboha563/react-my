@@ -7,7 +7,7 @@ function Header() {
   return <h2>我是Header组件</h2>
 }
 
-//
+// Main里面的banner
 class Banner extends PureComponent {
   render() {
     console.log("Banner render函数被调用");

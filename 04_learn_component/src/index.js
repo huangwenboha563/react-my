@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import App from './02_组件的生命周期/App'
+// import App from './03_组件间的通信/02_父传子通信-类组件';
 // import App from './03_组件间的通信/05_子传父通信-函数传递.js';
+
 // import App from './04_组件通信案例/App';
 // import App from './05_React实现slot/App';
 // import App from './04_组件通信案例/App';
@@ -23,7 +25,7 @@ import ReactDOM from 'react-dom';
 
 // import App from './08_React性能优化/01_列表中keys的作用';
 // import App from './08_React性能优化/02_组件嵌套的render调用';
-// import App from './08_React性能优化/03_shouldComponentUpdate';
+import App from './08_React性能优化/03_shouldComponentUpdate';
 // import App from './08_React性能优化/04_PureComponent';
 // import App from './08_React性能优化/05_memo的使用';
 
@@ -47,7 +49,7 @@ import ReactDOM from 'react-dom';
 // import App from './11_高阶组件的使用/09_高阶组件应用-生命周期劫持-增强-装饰器写法';
 // import App from './11_高阶组件的使用/homezsq';
 
-import App from './12_组件内容补充/01_ref的转发';
+// import App from './12_组件内容补充/01_ref的转发';
 // import App from './12_组件内容补充/02_portals的使用';
 // import "./css/index.css";
 // import App from './12_组件内容补充/03_fragments的使用';
