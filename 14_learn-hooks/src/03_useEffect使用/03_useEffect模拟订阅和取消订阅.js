@@ -25,6 +25,7 @@ export default function EffectHookCancelDemo() {
     }, []); 
     // 第二个参数是一个数组，是用来做性能优化的
     // 第二个参数传递一个空数组表示：这就告诉 React 你的 effect 不依赖于 props 或 state 中的任何值，所以它永远都不需要重复执行。
+    // 什么叫不需要重复执行呢？就是在首次执行时触发，对应到class组件就是componentDidMount
     // 第二个参数如果传递一个[count] //意思是count发生变化时候才执行 console.log("订阅一些事件");  console.log("取消订阅事件")这种代码
 
 

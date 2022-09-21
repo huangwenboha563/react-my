@@ -1,30 +1,42 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 /*
 * useState是为函数式组件而生...
 *
 */
 export default function ComplexHookState() {
-    // 第一个useState
+    // 第一个useState->朋友
     const [friends, setFrineds] = useState(["kobe", "lilei"]);
-    // 第二个useState
+    // 第二个useState->学生
     const [students, setStudents] = useState([
-        {id: 110, name: "why", age: 18},
-        {id: 111, name: "kobe", age: 30},
-        {id: 112, name: "lilei", age: 25},
+        { id: 110, name: "why", age: 18 },
+        { id: 111, name: "kobe", age: 30 },
+        { id: 112, name: "lilei", age: 25 },
     ])
     // 错误的做法
     function addFriend() {
         friends.push("hmm");
         setFrineds(friends);
     }
-
+    // 第一种写法
     function incrementAgeWithIndex(index) {
         // 把原来的数组拷贝一份切记
+        // 一定要把原来的拷贝一份，浅层比较
         const newStudents = [...students];
         newStudents[index].age += 1;
         setStudents(newStudents);
     }
-    function testAddFriend () {
+    // 第二个种写法
+    function incrementAgeWithIndexAnother(index) {
+        return (e) => {
+            // 把原来的数组拷贝一份切记
+            // 一定要把原来的拷贝一份，浅层比较
+            const newStudents = [...students];
+            newStudents[index].age += 1;
+            setStudents(newStudents);
+        }
+
+    }
+    function testAddFriend() {
         setFrineds([...friends, "tom"])
     }
     return (
@@ -51,8 +63,8 @@ export default function ComplexHookState() {
                         return (
                             <li key={item.id}>
                                 <span>名字: {item.name} 年龄: {item.age}</span>
-                                <button onClick={e => incrementAgeWithIndex(index)}>age+1</button>
-                                {/*<button onClick={incrementAgeWithIndex(index)}>age+1</button>*/}
+                                {/* <button onClick={e => incrementAgeWithIndex(index)}>age+1</button> */}
+                                <button onClick={incrementAgeWithIndexAnother(index)}>age+1</button>
                                 {/*疑问：这里为什么必须套一个箭头函数呢？ onclick直接这样incrementAgeWithIndex(index)不可以*/}
                                 {/*<span>&nbsp;&nbsp;&nbsp;&nbsp;{index}</span>*/}
                             </li>

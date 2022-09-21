@@ -18,7 +18,6 @@ const HYButton = memo((props) => {
 
 
 /* 
-
 https://blog.csdn.net/weixin_43720095/article/details/104965398
 */
 export default function CallbackHookDemo02() {
@@ -43,20 +42,17 @@ export default function CallbackHookDemo02() {
     return (
         <div>
             <h2>CallbackHookDemo01: {count}</h2>
-            {/* <button onClick={increment1}>+1</button>
-            <button onClick={increment2}>+1</button> */}
+            {/* <button onClick={increment1}>+1</button><button onClick={increment2}>+1</button> */}
             <HYButton title="btn1" increment={increment1}/><br/>
             <hr/>
             <HYButton title="btn2" increment={increment2}/><br/>
-            {/*show来回切换的时候CallbackHookDemo02肯定会执行重新渲染，子组件也会重新渲染，但是show发生切换理论上和button没关系的，
+            {/*
+            show来回切换的时候CallbackHookDemo02肯定会执行重新渲染，子组件也会重新渲染，但是show发生切换理论上和button没关系的，
             性能优化体现在哪里呢？
             点击show来回切换的时候。
             理论上来说和HYButton是没有半毛钱关系的，
             但是...increment1没有用useCallback    HYButton重新渲染: btn1控制台会打印这个 HYButton重新渲染: btn1
             increment2用了useCallback 但是不会打印 HYButton重新渲染: btn2
-            
-            
-            
             */}
             <button onClick={e => setShow(!show)}>show切换</button>
         </div>
@@ -66,6 +62,4 @@ export default function CallbackHookDemo02() {
 * 总结useMemo和useCallback都是用来做性能优化的....
 * useMemo缓存的是 一个 state结果
 * useCallback缓存的是一个方法
-*
-*
 */
